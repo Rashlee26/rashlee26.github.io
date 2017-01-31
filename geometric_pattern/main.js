@@ -11,22 +11,26 @@ function setup() {
 function draw() {
     var isShifted = false;
     
-    var y = 0;
-    while (y <= height) {
-        
+    var y = height;
+    while (y >= 0) {
     
-    var x = 0;
+    var x;
     
     if (isShifted) {
-    
-    }    
+        x = circleRadius;
+    } else {
+        x = 0;
     }
+    
     while (x <= width) {
+        fill(color(255, 0, 0));
         ellipse(x, y, circleDiameter, circleDiameter);
         x = x + circleDiameter;
     }
     
     y = y + circleRadius;
     isShifted = !isShifted;
+    
+    }    
     }
-}
+    
